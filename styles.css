@@ -529,6 +529,19 @@ a:focus-visible {
   letter-spacing: 0.04em;
 }
 
+.site-footer__broker {
+  margin-top: var(--s5);
+  padding-top: var(--s3);
+  border-top: 1px solid rgba(236, 227, 210, 0.15);
+  display: flex;
+  justify-content: center;
+}
+.site-footer__broker-logo {
+  height: 32px;
+  width: auto;
+  opacity: 0.85;
+}
+
 /* ----- Responsive ----------------------------------------------------- */
 
 @media (max-width: 900px) {
