@@ -168,7 +168,32 @@ a:focus-visible {
 }
 
 .eyebrow--hero {
-  margin-bottom: var(--s3);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--terracotta);
+  color: var(--cream);
+  padding: 8px 18px;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  letter-spacing: 0.2em;
+  margin: 0 0 var(--s4);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
+}
+
+.eyebrow--hero::before {
+  content: "";
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  background: var(--cream);
+  border-radius: 50%;
+  animation: coming-soon-pulse 1.8s ease-in-out infinite;
+}
+
+@keyframes coming-soon-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%      { opacity: 0.35; transform: scale(0.8); }
 }
 
 .hero__title {
@@ -386,5 +411,8 @@ a:focus-visible {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  * { transition: none !important; }
+  *, *::before, *::after {
+    transition: none !important;
+    animation: none !important;
+  }
 }
