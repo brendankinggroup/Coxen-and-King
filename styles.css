@@ -101,9 +101,13 @@ a:focus-visible {
   display: block;
   flex-shrink: 0;
 }
-.site-header__logo img {
-  height: 56px;
-  width: auto;
+.site-header__logo-img {
+  /* The logo SVG has a 1:1 canvas with ~85% padding around the wordmark.
+     Crop the padding with object-fit:cover and a wide aspect ratio. */
+  width: clamp(240px, 26vw, 360px);
+  height: clamp(44px, 4.5vw, 64px);
+  object-fit: cover;
+  object-position: center;
 }
 
 .site-nav {
@@ -161,6 +165,10 @@ a:focus-visible {
   margin: 0 auto;
   padding: var(--s8) var(--s5) var(--s7);
   color: var(--cream);
+}
+
+.eyebrow--hero {
+  margin-bottom: var(--s3);
 }
 
 .hero__title {
@@ -339,7 +347,6 @@ a:focus-visible {
 
 @media (max-width: 900px) {
   .site-header__inner { padding: var(--s3) var(--s4); }
-  .site-header__logo img { height: 44px; }
   .site-nav { gap: var(--s3); }
   .site-nav a { font-size: 0.72rem; letter-spacing: 0.14em; }
 
