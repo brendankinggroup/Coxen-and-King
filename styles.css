@@ -329,6 +329,67 @@ a:focus-visible {
   max-width: 26ch;
 }
 
+/* ----- About ---------------------------------------------------------- */
+
+.about {
+  background: var(--cream);
+  padding: var(--s8) 0;
+  border-top: 1px solid rgba(46, 46, 46, 0.08);
+}
+
+.about__inner {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.about__body {
+  font-family: var(--font-body);
+  font-size: clamp(1rem, 1.2vw, 1.1rem);
+  line-height: 1.7;
+  color: var(--charcoal);
+  max-width: 62ch;
+  margin: 0 auto var(--s7);
+}
+
+.stats {
+  list-style: none;
+  margin: 0;
+  padding: var(--s5) 0 0;
+  width: 100%;
+  max-width: 880px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--s4);
+  border-top: 1px solid rgba(46, 46, 46, 0.12);
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s1);
+  align-items: center;
+}
+
+.stat__num {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--terracotta);
+}
+
+.stat__label {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 0.82rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--charcoal);
+}
+
 /* ----- Service band --------------------------------------------------- */
 
 .service-band {
@@ -369,6 +430,105 @@ a:focus-visible {
   background: var(--gold);
 }
 
+/* ----- CTA ("Be the first to know") ----------------------------------- */
+
+.cta {
+  background: var(--navy);
+  color: var(--cream);
+  padding: var(--s8) 0;
+}
+
+.cta__inner {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.eyebrow--on-dark { color: var(--terracotta); }
+
+.cta__title {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(2rem, 4.5vw, 3rem);
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  color: var(--cream);
+  margin: 0 0 var(--s3);
+}
+
+.cta__body {
+  font-family: var(--font-body);
+  font-size: clamp(0.95rem, 1.2vw, 1.05rem);
+  line-height: 1.7;
+  color: var(--cream-80);
+  margin: 0 0 var(--s5);
+  max-width: 52ch;
+}
+
+.cta__contact {
+  font-size: 0.9rem;
+  color: var(--cream-80);
+  margin: var(--s4) 0 0;
+}
+.cta__contact a {
+  color: var(--cream);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.cta__contact a:hover { color: var(--terracotta); }
+
+/* ----- Footer --------------------------------------------------------- */
+
+.site-footer {
+  background: var(--navy);
+  color: var(--cream-80);
+  border-top: 1px solid var(--cream-15, rgba(236, 227, 210, 0.15));
+  padding: var(--s5) 0 var(--s4);
+}
+
+.site-footer__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s4);
+  flex-wrap: wrap;
+}
+
+.site-footer__logo {
+  display: block;
+  flex-shrink: 0;
+}
+
+.social {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: var(--s2);
+}
+.social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: 1px solid rgba(236, 227, 210, 0.4);
+  border-radius: 50%;
+  color: var(--cream);
+  transition: color 160ms ease, border-color 160ms ease;
+}
+.social a:hover {
+  color: var(--terracotta);
+  border-color: var(--terracotta);
+}
+
+.site-footer__copy {
+  font-size: 0.82rem;
+  margin: 0;
+  letter-spacing: 0.04em;
+}
+
 /* ----- Responsive ----------------------------------------------------- */
 
 @media (max-width: 900px) {
@@ -400,6 +560,21 @@ a:focus-visible {
     gap: var(--s2) var(--s4);
   }
   .service-band a + a::before { display: none; }
+
+  .about { padding: var(--s7) 0; }
+  .stats {
+    grid-template-columns: 1fr;
+    gap: var(--s3);
+    padding-top: var(--s4);
+  }
+
+  .cta { padding: var(--s7) 0; }
+
+  .site-footer__inner {
+    justify-content: center;
+    text-align: center;
+    gap: var(--s3);
+  }
 }
 
 @media (max-width: 560px) {

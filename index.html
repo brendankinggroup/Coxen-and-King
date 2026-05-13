@@ -91,6 +91,35 @@
     </div>
   </section>
 
+  <section class="about" id="about">
+    <div class="container about__inner">
+      <p class="eyebrow eyebrow--accent">About Coxen &amp; King</p>
+      <h2 class="section__title">Local Expertise.<br />Lasting Impact.</h2>
+      <p class="about__body">
+        Coxen &amp; King is a boutique real estate group pairing deep
+        market knowledge with a considered, modern approach to selling
+        and finding homes. We work closely with a small roster of
+        clients, bringing thoughtful strategy, elevated marketing, and
+        quiet persistence to every transaction.
+      </p>
+
+      <ul class="stats" aria-label="Coxen &amp; King at a glance">
+        <li class="stat">
+          <span class="stat__num">500+</span>
+          <span class="stat__label">Transactions Closed</span>
+        </li>
+        <li class="stat">
+          <span class="stat__num">$350M+</span>
+          <span class="stat__label">Total Sales Volume</span>
+        </li>
+        <li class="stat">
+          <span class="stat__num">15+</span>
+          <span class="stat__label">Years of Experience</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
   <nav class="service-band" aria-label="Services">
     <div class="service-band__inner">
       <a href="#buying">Buying</a>
@@ -99,6 +128,60 @@
       <a href="#relocating">Relocating</a>
     </div>
   </nav>
+
+  <section class="cta" id="contact">
+    <div class="container cta__inner">
+      <p class="eyebrow eyebrow--accent eyebrow--on-dark">We&rsquo;re launching soon</p>
+      <h2 class="cta__title">Be the first to know.</h2>
+      <p class="cta__body">
+        Sign up to receive launch updates, featured listings, and
+        market insights from Coxen &amp; King Group.
+      </p>
+      <a class="btn btn--primary" href="mailto:hello@coxenandking.com?subject=Notify%20me%20at%20launch">Notify Me</a>
+      <p class="cta__contact">
+        Or reach us directly at
+        <a href="mailto:hello@coxenandking.com">hello@coxenandking.com</a>.
+      </p>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <a class="site-footer__logo" href="/" aria-label="Coxen &amp; King Group home">
+        <img class="site-header__logo-img" src="assets/C_K%20Logo_White.svg" alt="Coxen &amp; King Group" />
+      </a>
+
+      <ul class="social" aria-label="Social links">
+        <li>
+          <a href="#" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6">
+              <rect x="3" y="3" width="18" height="18" rx="4" />
+              <circle cx="12" cy="12" r="4" />
+              <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a href="#" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6">
+              <rect x="3" y="3" width="18" height="18" rx="2" />
+              <line x1="8" y1="10" x2="8" y2="17" />
+              <circle cx="8" cy="7" r="1" fill="currentColor" stroke="none" />
+              <path d="M12 17v-4a2.5 2.5 0 0 1 5 0v4" />
+              <line x1="12" y1="10" x2="12" y2="17" />
+            </svg>
+          </a>
+        </li>
+      </ul>
+
+      <p class="site-footer__copy">&copy; <span id="year">2026</span> Coxen &amp; King Group &middot; All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const yearEl = document.getElementById('year');
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
+  </script>
 
 </body>
 </html>
