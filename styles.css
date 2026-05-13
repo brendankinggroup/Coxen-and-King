@@ -143,8 +143,8 @@ a:focus-visible {
 .hero__logo {
   display: block;
   width: auto;
-  height: clamp(160px, 24vw, 280px);
-  max-width: min(80%, 320px);
+  height: clamp(240px, 36vw, 440px);
+  max-width: 90%;
   margin: 0 auto var(--s4);
 }
 
