@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Coxen &amp; King — Real Estate Advisors</title>
-  <meta name="description" content="A boutique real estate advisory built on local insight, elevated marketing, and a client-first approach. Launching soon." />
+  <title>Coxen &amp; King Group — Real Estate Advisors</title>
+  <meta name="description" content="A boutique real estate group delivering exceptional service and elevated results across Las Vegas and beyond." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,117 +14,90 @@
 </head>
 <body>
 
-  <header class="hero">
-    <div class="hero__overlay"></div>
-
-    <div class="hero__content">
-      <img class="hero__logo"
-           src="assets/C_K%20Logo_White.svg"
-           alt="Coxen &amp; King — Real Estate Advisors"
-           width="600" height="600" />
-      <p class="eyebrow eyebrow--accent">Launching Soon</p>
-      <h1 class="hero__title">Real Expertise.<br />Remarkable Results.</h1>
-      <p class="hero__lede">
-        A boutique real estate advisory built on local insight, elevated
-        marketing, and a client-first approach.
-      </p>
-
-      <div class="countdown" id="countdown" aria-label="Time until launch">
-        <div class="countdown__cell">
-          <span class="countdown__num" id="days">--</span>
-          <span class="countdown__label">Days</span>
-        </div>
-        <div class="countdown__cell">
-          <span class="countdown__num" id="hours">--</span>
-          <span class="countdown__label">Hours</span>
-        </div>
-        <div class="countdown__cell">
-          <span class="countdown__num" id="minutes">--</span>
-          <span class="countdown__label">Minutes</span>
-        </div>
-        <div class="countdown__cell">
-          <span class="countdown__num" id="seconds">--</span>
-          <span class="countdown__label">Seconds</span>
-        </div>
-      </div>
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="site-header__logo" href="/" aria-label="Coxen &amp; King Group home">
+        <img src="assets/C_K%20Logo_White.svg" alt="Coxen &amp; King Group" />
+      </a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="#properties">Properties</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#areas">Areas</a>
+        <a href="#contact">Contact</a>
+      </nav>
     </div>
   </header>
 
-  <section class="about" id="about">
-    <div class="container">
-      <p class="eyebrow eyebrow--accent">About the Firm</p>
-      <h2 class="section__title">Local Expertise.<br />Lasting Impact.</h2>
-      <p class="about__body">
-        Coxen &amp; King is a boutique real estate advisory pairing deep
-        market knowledge with a considered, modern approach to selling and
-        finding homes. We work closely with a small roster of clients,
-        bringing thoughtful strategy, elevated marketing, and quiet
-        persistence to every transaction.
+  <section class="hero" aria-label="Introduction">
+    <img class="hero__photo" src="assets/hero.jpg" alt="" />
+    <div class="hero__overlay" aria-hidden="true"></div>
+    <div class="hero__content">
+      <h1 class="hero__title">Experience.<br />Insight. Results.</h1>
+      <p class="hero__lede">
+        A boutique real estate group delivering exceptional service
+        and elevated results across Las Vegas and beyond.
       </p>
+      <a class="btn btn--primary" href="#properties">View Properties</a>
+    </div>
+  </section>
 
-      <ul class="stats" aria-label="Firm at a glance">
-        <li class="stat">
-          <span class="stat__num">500+</span>
-          <span class="stat__label">Transactions Closed</span>
+  <section class="approach" id="services">
+    <div class="container approach__inner">
+      <p class="eyebrow eyebrow--accent">Our Approach</p>
+      <h2 class="section__title">Elevated service at<br />every step.</h2>
+      <span class="rule" aria-hidden="true"></span>
+
+      <ul class="approach__grid">
+        <li class="card">
+          <span class="card__icon" aria-hidden="true">
+            <svg viewBox="0 0 48 48" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="17" cy="19" r="5" />
+              <circle cx="31" cy="19" r="5" />
+              <path d="M9 36c1.5-4 4.5-6 8-6s6.5 2 8 6" />
+              <path d="M23 36c1.5-4 4.5-6 8-6s6.5 2 8 6" />
+            </svg>
+          </span>
+          <h3 class="card__title">Consultative<br />Approach</h3>
+          <p class="card__body">We listen first. Then we build the right strategy for you.</p>
         </li>
-        <li class="stat">
-          <span class="stat__num">$350M+</span>
-          <span class="stat__label">Total Sales Volume</span>
+
+        <li class="card">
+          <span class="card__icon" aria-hidden="true">
+            <svg viewBox="0 0 48 48" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="14" y1="34" x2="14" y2="26" />
+              <line x1="24" y1="34" x2="24" y2="20" />
+              <line x1="34" y1="34" x2="34" y2="14" />
+              <line x1="10" y1="38" x2="38" y2="38" />
+            </svg>
+          </span>
+          <h3 class="card__title">Market<br />Intelligence</h3>
+          <p class="card__body">Deep local knowledge. Real-time insights. Smarter decisions.</p>
         </li>
-        <li class="stat">
-          <span class="stat__num">15+</span>
-          <span class="stat__label">Years of Experience</span>
+
+        <li class="card">
+          <span class="card__icon" aria-hidden="true">
+            <svg viewBox="0 0 48 48" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M10 24 L24 12 L38 24" />
+              <path d="M13 22 L13 36 L35 36 L35 22" />
+              <rect x="21" y="27" width="6" height="9" />
+            </svg>
+          </span>
+          <h3 class="card__title">Seamless<br />Execution</h3>
+          <p class="card__body">Clear communication. Thoughtful marketing. Proven results.</p>
         </li>
       </ul>
     </div>
   </section>
 
-  <footer class="contact" id="contact">
-    <div class="container contact__grid">
-      <div class="contact__intro">
-        <p class="eyebrow eyebrow--accent">Get in Touch</p>
-        <h3 class="section__title section__title--light">We&rsquo;d love to hear from you.</h3>
-        <p class="contact__lede">
-          Reach out anytime &mdash; we&rsquo;ll be in touch with launch
-          details and answers to your questions.
-        </p>
-      </div>
-
-      <div class="contact__details">
-        <a class="contact__line" href="mailto:hello@coxenandking.com">hello@coxenandking.com</a>
-        <a class="contact__line" href="tel:+10000000000">(000) 000&ndash;0000</a>
-        <p class="contact__line contact__line--muted">Serving the region &amp; beyond</p>
-
-        <ul class="social" aria-label="Social links">
-          <li>
-            <a href="#" aria-label="Instagram">
-              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6">
-                <rect x="3" y="3" width="18" height="18" rx="4" />
-                <circle cx="12" cy="12" r="4" />
-                <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
-              </svg>
-            </a>
-          </li>
-          <li>
-            <a href="#" aria-label="LinkedIn">
-              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6">
-                <rect x="3" y="3" width="18" height="18" rx="2" />
-                <line x1="8" y1="10" x2="8" y2="17" />
-                <circle cx="8" cy="7" r="1" fill="currentColor" stroke="none" />
-                <path d="M12 17v-4a2.5 2.5 0 0 1 5 0v4" />
-                <line x1="12" y1="10" x2="12" y2="17" />
-              </svg>
-            </a>
-          </li>
-        </ul>
-      </div>
+  <nav class="service-band" aria-label="Services">
+    <div class="service-band__inner">
+      <a href="#buying">Buying</a>
+      <a href="#selling">Selling</a>
+      <a href="#investing">Investing</a>
+      <a href="#relocating">Relocating</a>
     </div>
+  </nav>
 
-    <div class="container colophon">
-      <span>&copy; <span id="year">2026</span> Coxen &amp; King &middot; Real Estate Advisors</span>
-    </div>
-  </footer>
-
-  <script src="script.js"></script>
 </body>
 </html>
