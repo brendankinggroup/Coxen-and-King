@@ -16,11 +16,11 @@ git clone https://github.com/brendankinggroup/coxen-and-king.git
 cd coxen-and-king
 
 # Each session
-git pull origin claude/document-repo-contents-x5poi   # start fresh
+git pull origin main                                   # start fresh
 # … make changes …
 git add -p                                            # stage what you meant
 git commit -m "tweak hero copy"
-git push origin claude/document-repo-contents-x5poi
+git push origin main
 ```
 
 If `git pull` reports conflicts, open the conflicted file, look for the
