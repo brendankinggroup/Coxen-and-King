@@ -540,6 +540,9 @@ a:focus-visible {
   height: 32px;
   width: auto;
   opacity: 0.85;
+  /* Force the uploaded navy logo to render as white on the dark footer.
+     Remove once a true white-on-transparent variant is in place. */
+  filter: brightness(0) invert(1);
 }
 
 /* ----- Responsive ----------------------------------------------------- */
