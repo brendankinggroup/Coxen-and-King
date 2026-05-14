@@ -529,31 +529,6 @@ a:focus-visible {
   letter-spacing: 0.04em;
 }
 
-.site-footer__broker {
-  margin-top: var(--s5);
-  padding-top: var(--s3);
-  border-top: 1px solid rgba(236, 227, 210, 0.15);
-  display: flex;
-  justify-content: center;
-}
-.site-footer__broker-card {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--cream);
-  padding: 12px 20px;
-  border-radius: 4px;
-}
-.site-footer__broker-logo {
-  /* Same crop-the-padding trick as the C&K header logo:
-     SVG canvas is 1500x1500 with ~80% blank space, so crop to a
-     wide aspect ratio with object-fit:cover. */
-  width: 160px;
-  height: 36px;
-  object-fit: cover;
-  object-position: center;
-}
-
 /* ----- Responsive ----------------------------------------------------- */
 
 @media (max-width: 900px) {
