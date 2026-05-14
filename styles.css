@@ -536,13 +536,17 @@ a:focus-visible {
   display: flex;
   justify-content: center;
 }
+.site-footer__broker-card {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--cream);
+  padding: 10px 18px;
+  border-radius: 4px;
+}
 .site-footer__broker-logo {
-  height: 32px;
+  height: 28px;
   width: auto;
-  opacity: 0.85;
-  /* Force the uploaded navy logo to render as white on the dark footer.
-     Remove once a true white-on-transparent variant is in place. */
-  filter: brightness(0) invert(1);
 }
 
 /* ----- Responsive ----------------------------------------------------- */
