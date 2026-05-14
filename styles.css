@@ -541,12 +541,17 @@ a:focus-visible {
   align-items: center;
   justify-content: center;
   background: var(--cream);
-  padding: 10px 18px;
+  padding: 12px 20px;
   border-radius: 4px;
 }
 .site-footer__broker-logo {
-  height: 28px;
-  width: auto;
+  /* Same crop-the-padding trick as the C&K header logo:
+     SVG canvas is 1500x1500 with ~80% blank space, so crop to a
+     wide aspect ratio with object-fit:cover. */
+  width: 160px;
+  height: 36px;
+  object-fit: cover;
+  object-position: center;
 }
 
 /* ----- Responsive ----------------------------------------------------- */
