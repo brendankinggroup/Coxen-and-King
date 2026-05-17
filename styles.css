@@ -126,6 +126,35 @@ a:focus-visible {
 }
 .site-nav a:hover { color: var(--terracotta); }
 
+.site-nav a.nav-coming-soon {
+  position: relative;
+  cursor: default;
+}
+.site-nav a.nav-coming-soon::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 50%;
+  transform: translate(-50%, -4px);
+  background: var(--terracotta);
+  color: var(--cream);
+  padding: 5px 12px;
+  border-radius: 999px;
+  font-size: 0.6rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 180ms ease, transform 180ms ease;
+}
+.site-nav a.nav-coming-soon:hover::after,
+.site-nav a.nav-coming-soon:focus-visible::after,
+.site-nav a.nav-coming-soon.is-tapped::after {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
 /* ----- Hero ----------------------------------------------------------- */
 
 .hero {
