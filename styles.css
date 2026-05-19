@@ -30,12 +30,12 @@
   --navy-95:    rgba(27, 42, 65, 0.95);
   --navy-65:    rgba(27, 42, 65, 0.65);
   --navy-0:     rgba(27, 42, 65, 0);
-  --cream:      #ECE3D2;
-  --cream-80:   rgba(236, 227, 210, 0.80);
-  --cream-40:   rgba(236, 227, 210, 0.40);
-  --sage:       #A8B5A0;
-  --sage-band:  #9AA48B;
-  --terracotta: #C36B4A;
+  --cream:      #F5F1E8;
+  --cream-80:   rgba(245, 241, 232, 0.80);
+  --cream-40:   rgba(245, 241, 232, 0.40);
+  --sage:       #A7A794;
+  --sage-band:  #A7A794;
+  --terracotta: #C07A5A;
   --charcoal:   #2E2E2E;
   --gold:       #C8A96A;
 
@@ -88,13 +88,11 @@ a:focus-visible {
 }
 
 .site-header__inner {
-  max-width: var(--content-max);
-  margin: 0 auto;
   padding: var(--s4) var(--s5);
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: var(--s4);
+  justify-content: flex-start;
+  gap: var(--s6);
 }
 
 .site-header__logo {
@@ -103,11 +101,13 @@ a:focus-visible {
 }
 .site-header__logo-img {
   /* The logo SVG has a 1:1 canvas with ~85% padding around the wordmark.
-     Crop the padding with object-fit:cover and a wide aspect ratio. */
+     Crop the padding with object-fit:cover; object-position:left pulls the
+     wordmark flush to the container's left padding so it aligns with the
+     hero title's left edge. */
   width: clamp(240px, 26vw, 360px);
   height: clamp(44px, 4.5vw, 64px);
   object-fit: cover;
-  object-position: center;
+  object-position: left;
 }
 
 .site-nav {
@@ -118,42 +118,13 @@ a:focus-visible {
 .site-nav a {
   font-family: var(--font-display);
   font-weight: 500;
-  font-size: 0.78rem;
-  letter-spacing: 0.18em;
+  font-size: 17pt;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--cream);
   transition: color 160ms ease;
 }
 .site-nav a:hover { color: var(--terracotta); }
-
-.site-nav a.nav-coming-soon {
-  position: relative;
-  cursor: default;
-}
-.site-nav a.nav-coming-soon::after {
-  content: attr(data-tooltip);
-  position: absolute;
-  top: calc(100% + 10px);
-  left: 50%;
-  transform: translate(-50%, -4px);
-  background: var(--terracotta);
-  color: var(--cream);
-  padding: 5px 12px;
-  border-radius: 999px;
-  font-size: 0.6rem;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  white-space: nowrap;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 180ms ease, transform 180ms ease;
-}
-.site-nav a.nav-coming-soon:hover::after,
-.site-nav a.nav-coming-soon:focus-visible::after,
-.site-nav a.nav-coming-soon.is-tapped::after {
-  opacity: 1;
-  transform: translate(-50%, 0);
-}
 
 /* ----- Hero ----------------------------------------------------------- */
 
@@ -189,9 +160,7 @@ a:focus-visible {
 }
 
 .hero__content {
-  max-width: var(--content-max);
   width: 100%;
-  margin: 0 auto;
   padding: var(--s8) var(--s5) var(--s7);
   color: var(--cream);
 }
@@ -210,7 +179,7 @@ a:focus-visible {
 .hero__lede {
   font-family: var(--font-body);
   font-weight: 400;
-  font-size: clamp(0.95rem, 1.2vw, 1.05rem);
+  font-size: 17pt;
   line-height: 1.6;
   color: var(--cream-80);
   margin: 0 0 var(--s5);
@@ -255,8 +224,8 @@ a:focus-visible {
 .eyebrow {
   font-family: var(--font-display);
   font-weight: 500;
-  font-size: 0.78rem;
-  letter-spacing: 0.22em;
+  font-size: 1.2rem;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   margin: 0 0 var(--s3);
 }
@@ -271,8 +240,8 @@ a:focus-visible {
   color: var(--cream);
   padding: 8px 18px;
   border-radius: 999px;
-  font-size: 0.82rem;
-  letter-spacing: 0.2em;
+  font-size: 1.25rem;
+  letter-spacing: 0.18em;
   margin: 0 0 var(--s4);
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
 }
@@ -351,7 +320,7 @@ a:focus-visible {
 
 .card__body {
   font-family: var(--font-body);
-  font-size: 0.95rem;
+  font-size: 17pt;
   line-height: 1.6;
   color: var(--charcoal);
   margin: 0;
@@ -375,7 +344,7 @@ a:focus-visible {
 
 .about__body {
   font-family: var(--font-body);
-  font-size: clamp(1rem, 1.2vw, 1.1rem);
+  font-size: 17pt;
   line-height: 1.7;
   color: var(--charcoal);
   max-width: 62ch;
@@ -488,7 +457,7 @@ a:focus-visible {
 
 .cta__body {
   font-family: var(--font-body);
-  font-size: clamp(0.95rem, 1.2vw, 1.05rem);
+  font-size: 17pt;
   line-height: 1.7;
   color: var(--cream-80);
   margin: 0 0 var(--s5);
@@ -512,7 +481,7 @@ a:focus-visible {
 .site-footer {
   background: var(--navy);
   color: var(--cream-80);
-  border-top: 1px solid var(--cream-15, rgba(236, 227, 210, 0.15));
+  border-top: 1px solid var(--cream-15, rgba(245, 241, 232, 0.15));
   padding: var(--s5) 0 var(--s4);
 }
 
@@ -526,8 +495,24 @@ a:focus-visible {
 }
 
 .site-footer__logo {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--s2);
   flex-shrink: 0;
+}
+
+.site-footer__logo-img {
+  width: clamp(220px, 24vw, 320px);
+  height: clamp(40px, 4.2vw, 58px);
+  object-fit: cover;
+  object-position: center;
+}
+
+.site-footer__logo-real {
+  width: clamp(110px, 12vw, 160px);
+  height: auto;
+  opacity: 0.85;
 }
 
 .social {
@@ -562,9 +547,9 @@ a:focus-visible {
 /* ----- Responsive ----------------------------------------------------- */
 
 @media (max-width: 900px) {
-  .site-header__inner { padding: var(--s3) var(--s4); }
+  .site-header__inner { padding: var(--s3) var(--s4); gap: var(--s4); }
   .site-nav { gap: var(--s3); }
-  .site-nav a { font-size: 0.72rem; letter-spacing: 0.14em; }
+  .site-nav a { font-size: 14pt; letter-spacing: 0.12em; }
 
   .hero__content { padding: var(--s7) var(--s4) var(--s6); }
   .hero__overlay {
@@ -575,7 +560,10 @@ a:focus-visible {
         var(--navy-95) 100%);
   }
   .hero__title  { max-width: 100%; }
-  .hero__lede   { max-width: 38ch; }
+  .hero__lede   { max-width: 38ch; font-size: 15pt; }
+  .card__body   { font-size: 15pt; }
+  .about__body  { font-size: 15pt; }
+  .cta__body    { font-size: 15pt; }
 
   .approach { padding: var(--s7) 0; }
   .approach__grid {
@@ -621,4 +609,67 @@ a:focus-visible {
     transition: none !important;
     animation: none !important;
   }
+}
+
+/* ----- "Currently under construction" modal --------------------------- */
+
+.cs-modal[hidden] { display: none; }
+
+.cs-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--s4);
+  opacity: 0;
+  transition: opacity 180ms ease;
+}
+.cs-modal.is-open { opacity: 1; }
+
+.cs-modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(27, 42, 65, 0.7);
+}
+
+.cs-modal__panel {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  background: var(--cream);
+  color: var(--navy);
+  padding: var(--s5);
+  border-radius: 6px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+  text-align: center;
+}
+
+.cs-modal__title {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 1.4rem;
+  color: var(--terracotta);
+  margin: 0 0 var(--s2);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+}
+
+.cs-modal__body {
+  font-family: var(--font-body);
+  font-size: 17pt;
+  line-height: 1.5;
+  color: var(--charcoal);
+  margin: 0 0 var(--s4);
+}
+
+.cs-modal__ok {
+  margin-top: var(--s2);
+  border: 0;
+  cursor: pointer;
+}
+
+@media (max-width: 900px) {
+  .cs-modal__body { font-size: 15pt; }
 }
