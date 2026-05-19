@@ -103,11 +103,13 @@ a:focus-visible {
   /* The logo SVG has a 1:1 canvas with ~85% padding around the wordmark.
      Crop the padding with object-fit:cover; object-position:left pulls the
      wordmark flush to the container's left padding so it aligns with the
-     hero title's left edge. */
+     hero title's left edge. The translateX nudges past the small remaining
+     internal padding inside the SVG itself (the "C" starts at ~5.7% in). */
   width: clamp(240px, 26vw, 360px);
   height: clamp(44px, 4.5vw, 64px);
   object-fit: cover;
   object-position: left;
+  transform: translateX(-5.7%);
 }
 
 .site-nav {
@@ -528,7 +530,7 @@ a:focus-visible {
   justify-content: center;
   width: 36px;
   height: 36px;
-  border: 1px solid rgba(236, 227, 210, 0.4);
+  border: 1px solid var(--cream-40);
   border-radius: 50%;
   color: var(--cream);
   transition: color 160ms ease, border-color 160ms ease;
@@ -547,11 +549,16 @@ a:focus-visible {
 /* ----- Responsive ----------------------------------------------------- */
 
 @media (max-width: 900px) {
+  .site-header {
+    position: relative;
+    background: var(--navy);
+  }
   .site-header__inner { padding: var(--s3) var(--s4); gap: var(--s4); }
-  .site-nav { gap: var(--s3); }
-  .site-nav a { font-size: 14pt; letter-spacing: 0.12em; }
+  .site-nav { gap: var(--s3) var(--s4); }
+  .site-nav a { font-size: 13pt; letter-spacing: 0.1em; }
 
-  .hero__content { padding: var(--s7) var(--s4) var(--s6); }
+  .hero { min-height: auto; }
+  .hero__content { padding: var(--s6) var(--s4) var(--s6); }
   .hero__overlay {
     background:
       linear-gradient(180deg,
