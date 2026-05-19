@@ -103,11 +103,13 @@ a:focus-visible {
   /* The logo SVG has a 1:1 canvas with ~85% padding around the wordmark.
      Crop the padding with object-fit:cover; object-position:left pulls the
      wordmark flush to the container's left padding so it aligns with the
-     hero title's left edge. */
+     hero title's left edge. The translateX nudges past the small remaining
+     internal padding inside the SVG itself (the "C" starts at ~5.7% in). */
   width: clamp(240px, 26vw, 360px);
   height: clamp(44px, 4.5vw, 64px);
   object-fit: cover;
   object-position: left;
+  transform: translateX(-5.7%);
 }
 
 .site-nav {
