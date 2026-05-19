@@ -511,12 +511,6 @@ a:focus-visible {
   object-position: center;
 }
 
-.site-footer__logo-real {
-  width: clamp(110px, 12vw, 160px);
-  height: auto;
-  opacity: 0.85;
-}
-
 .social {
   list-style: none;
   margin: 0;
