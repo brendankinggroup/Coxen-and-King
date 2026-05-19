@@ -528,7 +528,7 @@ a:focus-visible {
   justify-content: center;
   width: 36px;
   height: 36px;
-  border: 1px solid rgba(236, 227, 210, 0.4);
+  border: 1px solid var(--cream-40);
   border-radius: 50%;
   color: var(--cream);
   transition: color 160ms ease, border-color 160ms ease;
@@ -547,11 +547,16 @@ a:focus-visible {
 /* ----- Responsive ----------------------------------------------------- */
 
 @media (max-width: 900px) {
+  .site-header {
+    position: relative;
+    background: var(--navy);
+  }
   .site-header__inner { padding: var(--s3) var(--s4); gap: var(--s4); }
-  .site-nav { gap: var(--s3); }
-  .site-nav a { font-size: 14pt; letter-spacing: 0.12em; }
+  .site-nav { gap: var(--s3) var(--s4); }
+  .site-nav a { font-size: 13pt; letter-spacing: 0.1em; }
 
-  .hero__content { padding: var(--s7) var(--s4) var(--s6); }
+  .hero { min-height: auto; }
+  .hero__content { padding: var(--s6) var(--s4) var(--s6); }
   .hero__overlay {
     background:
       linear-gradient(180deg,
