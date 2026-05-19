@@ -19,7 +19,10 @@
       <a class="site-header__logo" href="/" aria-label="Coxen &amp; King Group home">
         <img class="site-header__logo-img" src="assets/C_K%20Logo_White.svg" alt="Coxen &amp; King Group" />
       </a>
-      <nav class="site-nav" aria-label="Primary">
+      <button class="site-nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primary-nav">
+        <span></span><span></span><span></span>
+      </button>
+      <nav id="primary-nav" class="site-nav" aria-label="Primary">
         <a href="https://thebrendankinggroup.com/listing?mode=grid&amp;zoom=10&amp;threshold=10&amp;page=1&amp;sort=PRICE_DESC&amp;listingSource=all%20listings">Properties</a>
         <a href="#about">About</a>
         <a href="#services">Services</a>
@@ -215,6 +218,25 @@
   <script>
     const yearEl = document.getElementById('year');
     if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+    (function () {
+      const toggle = document.querySelector('.site-nav-toggle');
+      const nav = document.getElementById('primary-nav');
+      if (toggle && nav) {
+        const closeNav = () => {
+          toggle.setAttribute('aria-expanded', 'false');
+          nav.classList.remove('is-open');
+        };
+        toggle.addEventListener('click', () => {
+          const open = toggle.getAttribute('aria-expanded') === 'true';
+          toggle.setAttribute('aria-expanded', open ? 'false' : 'true');
+          nav.classList.toggle('is-open');
+        });
+        nav.addEventListener('click', (e) => {
+          if (e.target.closest('a')) closeNav();
+        });
+      }
+    })();
 
     (function () {
       const modal = document.getElementById('csModal');
