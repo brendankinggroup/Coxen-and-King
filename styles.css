@@ -100,16 +100,15 @@ a:focus-visible {
   flex-shrink: 0;
 }
 .site-header__logo-img {
-  /* The logo SVG has a 1:1 canvas with ~85% padding around the wordmark.
-     Crop the padding with object-fit:cover; object-position:left pulls the
-     wordmark flush to the container's left padding so it aligns with the
-     hero title's left edge. The translateX nudges past the small remaining
-     internal padding inside the SVG itself (the "C" starts at ~5.7% in). */
+  /* The logo SVG has a 1:1 canvas with padding around the wordmark.
+     Crop the padding with object-fit:cover; object-position:left pulls
+     the wordmark flush to the container's left padding. The remaining
+     ~5.7% of internal padding inside the SVG is matched on the hero
+     content's padding-left so the wordmark and hero text line up. */
   width: clamp(240px, 26vw, 360px);
   height: clamp(44px, 4.5vw, 64px);
   object-fit: cover;
   object-position: left;
-  transform: translateX(-5.7%);
 }
 
 .site-nav {
@@ -163,7 +162,10 @@ a:focus-visible {
 
 .hero__content {
   width: 100%;
-  padding: var(--s8) var(--s5) var(--s7);
+  /* Left padding is the header's left padding (--s5) plus 5.7% of the
+     logo's rendered width, which is the SVG's internal padding before
+     the "C" of COXEN starts. Keeps hero text aligned with the wordmark. */
+  padding: var(--s8) var(--s5) var(--s7) calc(var(--s5) + clamp(240px, 26vw, 360px) * 0.057);
   color: var(--cream);
 }
 
