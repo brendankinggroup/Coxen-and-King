@@ -88,8 +88,6 @@ a:focus-visible {
 }
 
 .site-header__inner {
-  max-width: var(--content-max);
-  margin: 0 auto;
   padding: var(--s4) var(--s5);
   display: flex;
   align-items: center;
@@ -162,9 +160,7 @@ a:focus-visible {
 }
 
 .hero__content {
-  max-width: var(--content-max);
   width: 100%;
-  margin: 0 auto;
   padding: var(--s8) var(--s5) var(--s7);
   color: var(--cream);
 }
