@@ -127,6 +127,39 @@ a:focus-visible {
 }
 .site-nav a:hover { color: var(--terracotta); }
 
+/* Hamburger toggle — hidden on desktop, shown on mobile via media query. */
+.site-nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 44px;
+  height: 44px;
+  padding: 10px;
+  margin-left: auto;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+.site-nav-toggle span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: var(--cream);
+  border-radius: 1px;
+  transition: transform 200ms ease, opacity 200ms ease;
+  transform-origin: center;
+}
+.site-nav-toggle[aria-expanded="true"] span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.site-nav-toggle[aria-expanded="true"] span:nth-child(2) {
+  opacity: 0;
+}
+.site-nav-toggle[aria-expanded="true"] span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
 /* ----- Hero ----------------------------------------------------------- */
 
 .hero {
@@ -549,12 +582,29 @@ a:focus-visible {
     position: relative;
     background: var(--navy);
   }
-  .site-header__inner { padding: var(--s3) var(--s4); gap: var(--s4); }
-  .site-nav { gap: var(--s3) var(--s4); }
-  .site-nav a { font-size: 13pt; letter-spacing: 0.1em; }
+  .site-header__inner {
+    padding: var(--s3) var(--s4);
+    gap: var(--s3);
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .site-nav-toggle { display: inline-flex; }
+  .site-nav {
+    display: none;
+    width: 100%;
+    flex-basis: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--s3);
+    padding-top: var(--s3);
+    margin-top: var(--s3);
+    border-top: 1px solid var(--cream-40);
+  }
+  .site-nav.is-open { display: flex; }
+  .site-nav a { font-size: 14pt; letter-spacing: 0.1em; }
 
   .hero { min-height: auto; }
-  .hero__content { padding: var(--s6) var(--s4) var(--s6); }
+  .hero__content { padding: var(--s7) var(--s4) var(--s6); }
   .hero__overlay {
     background:
       linear-gradient(180deg,
@@ -599,12 +649,7 @@ a:focus-visible {
 }
 
 @media (max-width: 560px) {
-  .site-header__inner {
-    flex-direction: column;
-    gap: var(--s2);
-    align-items: flex-start;
-  }
-  .site-nav { gap: var(--s2); flex-wrap: wrap; }
+  .site-nav a { font-size: 13pt; }
 }
 
 @media (prefers-reduced-motion: reduce) {
