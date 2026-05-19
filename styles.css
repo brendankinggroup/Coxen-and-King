@@ -531,21 +531,6 @@ a:focus-visible {
   gap: var(--s3);
 }
 
-.site-footer__logo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: var(--s2);
-  flex-shrink: 0;
-}
-
-.site-footer__logo-img {
-  width: clamp(220px, 24vw, 320px);
-  height: clamp(40px, 4.2vw, 58px);
-  object-fit: cover;
-  object-position: center;
-}
-
 .social {
   list-style: none;
   margin: 0;
